@@ -1,6 +1,11 @@
+import java.util.*;
+
 public class TrianguloRecursivo{
     public static void main(String[] args) {
-        trianguloRecursivo(5);
+        Scanner jh = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de asteriscos de la base del triángulo: ");
+        int base = jh.nextInt();
+        trianguloRecursivo(base);
     }
     public static void trianguloRecursivo(int base){
         for(int i = 0; i < base; i++){
