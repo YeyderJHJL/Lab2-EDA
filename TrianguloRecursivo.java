@@ -8,6 +8,7 @@ public class TrianguloRecursivo{
         trianguloRecursivo(base);
     }
     public static void trianguloRecursivo(int base){
+        System.out.println("triangulo recursivo");
         for(int i = 0; i < base; i++){
             for(int j = 0; j <= i; j++){
                 System.out.print("*");
