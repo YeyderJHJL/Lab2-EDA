@@ -12,11 +12,11 @@ public class NodeList<T> {
     } else {
       Node<T> currentNode = root;
 
-      while (currentNode.nextNode != null) {
-        currentNode = currentNode.nextNode;
+      while (currentNode.getNextNode() != null) {
+        currentNode = currentNode.getNextNode();
       }
 
-      currentNode.nextNode = newNode;
+      currentNode.setNextNode(newNode);
     }
   }
 }
