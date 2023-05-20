@@ -27,4 +27,33 @@ public class NodeList<T> {
       currentNode.setNextNode(newNode);
     }
   }
+
+  public void add(int index, T element) {
+    Node<T> newNode = new Node<>();
+    newNode.setData(element);
+
+    if(index <= this.size()) {
+      if(this.root != null) {
+        Node<T> currentNode = this.root;
+
+        for(int i = 1; i < index; i++) {
+          currentNode = currentNode.getNextNode();
+        }
+
+        if(currentNode.getNextNode() != null) {
+          newNode.setNextNode(currentNode.getNextNode());
+        }
+        currentNode.setNextNode(newNode);
+      } else {
+        this.add(element);
+      }
+    } else {
+      System.out.println("No se puede añadir un elemento fuera de rango")
+    }
+  }
+
+  public int size() {
+    int listSize = 0;
+    return listSize;
+  }
 }
