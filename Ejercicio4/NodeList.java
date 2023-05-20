@@ -2,6 +2,16 @@ package Ejercicio4;
 
 public class NodeList<T> {
   Node<T> root;
+/*
+ considero conveniente que se crea una lista local para algunos metodos
+ private List<T> lista;
+
+    // Constructor de la clase
+    public NodeList(List<T> lista) {
+        this.lista = lista;
+    }
+ 
+ */
 
 //Este metodo reemplaza el elemento en la posición especificada en esta lista con el elemento especificado.
    public T set(int index, T element) {    //como parametros recibe el indice de posicion y el elemento
@@ -49,7 +59,7 @@ public class NodeList<T> {
         List<T> subList = new ArrayList<>();
 	// Iterar sobre los elementos desde fromIndex hasta toIndex y los agrega a la sublista
         for (int i = fromIndex; i < toIndex; i++) {
-            subList.add(elements.get(i));
+            subList.add(lista.get(i));
         }
         // Devuelve la sublista creada
         return subList;
