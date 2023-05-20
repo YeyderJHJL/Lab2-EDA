@@ -32,6 +32,14 @@ public class NodeList<T> {
         }
    }
 
+//Este metodo devuelve el número de elementos de esta lista.
+   public static <T> int size() {
+	   private List<T> lista; //se usa una lista interna.
+        return lista.size();  // Utiliza el método size() de la clase List para obtener el tamaño.
+
+    }
+
+
 
 }
 
