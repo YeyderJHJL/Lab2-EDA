@@ -5,7 +5,12 @@ class RotacionIzquierda {
     public static void main(String[] args) {
 
     int[] arrayPrueba = {1, 2, 3, 4, 5};
+      System.out.println("Array: ");
+      imprimir(arrayPrueba);
     int[] arrayRotado = rotar(arrayPrueba);
+      System.out.println("\nArray rotado a la izquierda: ");
+      imprimir(arrayRotado);
+
     }
 
     public static int[] rotar(int[] A){
