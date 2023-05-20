@@ -29,38 +29,41 @@ public class NodeList<T> {
   }
 
   public void add(int index, T element) {
-    //Se verifica si el elemento añadir estara dentro de rango
-    if(index <= this.size()) {
-      //Se verifica que la lista no este vacia
-      if(this.root != null) {
-        //Se crea un nuevo Nodo y se le agrega su elemento
+    // Se verifica si el elemento añadir estara dentro de rango
+    if (index <= this.size()) {
+      // Se verifica que la lista no este vacia
+      if (this.root != null) {
+        // Se crea un nuevo Nodo y se le agrega su elemento
         Node<T> newNode = new Node<>();
         newNode.setData(element);
-        //Se crea la variable currentNode y se le asigna el valor de la raiz
+        // Se crea la variable currentNode y se le asigna el valor de la raiz
         Node<T> currentNode = this.root;
 
-        //Se avanca por los nodos hasta llegar al nodo anterior al nodo que queremos agregar
-        for(int i = 1; i < index; i++) {
+        // Se avanca por los nodos hasta llegar al nodo anterior al nodo que queremos
+        // agregar
+        for (int i = 1; i < index; i++) {
           currentNode = currentNode.getNextNode();
         }
 
-        //Se verifica que el currentNode no sea el ultimo de la lista
-        if(currentNode.getNextNode() != null) {
-          //El siguiente nodo del currentNode pasa a ser el siguiente nodo del nuevo nodo
+        // Se verifica que el currentNode no sea el ultimo de la lista
+        if (currentNode.getNextNode() != null) {
+          // El siguiente nodo del currentNode pasa a ser el siguiente nodo del nuevo nodo
           newNode.setNextNode(currentNode.getNextNode());
         }
-        //Se asigna el nuevo nodo como el siguiente del currentNode
+        // Se asigna el nuevo nodo como el siguiente del currentNode
         currentNode.setNextNode(newNode);
       } else {
-        //Si la lista esta vacia se usa el metodo add(element) para añadir el nuevo elemento
+        // Si la lista esta vacia se usa el metodo add(element) para añadir el nuevo
+        // elemento
         this.add(element);
       }
     } else {
-      //Al no estar dentro del rango se mandara un mensaje
-      System.out.println("No se puede añadir un elemento fuera de rango")
+      // Al no estar dentro del rango se mandara un mensaje
+      System.out.println("No se puede añadir un elemento fuera de rango");
     }
   }
 
+  // Este metodo aun no esta hecho, pero deberia devolver el tamaño de la lista
   public int size() {
     int listSize = 0;
     return listSize;
