@@ -22,5 +22,10 @@ class RotacionIzquierda {
        return Aiz;
     }
 
+    public static void imprimir(int[] A) {
+        for (int i=0; i<A.length; i++)      {
+            System.out.print(A[i] + " ");   }
+    }
+
 }
 
