@@ -65,7 +65,7 @@ public class NodeList<T> {
         return subList;
     }
 //Este metodo elimina el elemento en la posición especificada en esta lista
-  public void remove(int index) {
+  public void remove(int index) {   //recibe como parametro el index
 	//si el índice está fuera de rango 
         if (index < 0 || index >= lista.size()) {
             throw new IndexOutOfBoundsException("Indice fuera del rango");
@@ -75,6 +75,37 @@ public class NodeList<T> {
         // eliminar el elemento de la lista
         elements.lista(index);
     }
-//
+//Este metodo elimina la primera aparición del elemento especificado de esta lista, si está presente (operación opcional). Si esta lista no contiene el elemento, no se modifica. Más formalmente, elimina el elemento con el índice más bajo i tal que (o==null ? get(i)==null : o.equals(get(i))) (si tal elemento existe). Devuelve verdadero si esta lista contenía el elemento especificado (o de manera equivalente, si esta lista cambió como resultado de la llamada). 
+public boolean remove(Object o) {
+    // verifica si la operación de eliminación es compatible con esta lista
+    if (!supportsRemoval()) {
+        throw new UnsupportedOperationException("Operación de eliminación no es compatible con esta lista.");
+    }
+    // Verifica si el objeto es nulo y la lista no permite elementos nulos
+    if (o == null && !allowsNullElements()) {
+        throw new NullPointerException("Esta lista no permite elementos nulos.");
+    }
+    // Verifica si el objeto es compatible con los elementos de la lista
+    if (o != null && !isElementTypeValid(o)) {
+        throw new ClassCastException("El tipo de elemento es incompatible con esta lista.");
+    }
+    // busca el índice del elemento en la lista
+    int index = -1;
+    for (int i = 0; i < size(); i++) {
+        if ((o == null && get(i) == null) || (o != null && o.equals(get(i)))) {
+            index = i;
+            break;
+        }
+    }
+    // Elimina el elemento si se encontró
+    if (index != -1) {
+        elements.remove(index);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 }
 
