@@ -28,5 +28,15 @@ public class Node<T> {
   public void setNextNode(Node<T> nextNode) {
     this.nextNode = nextNode;
   }
+
+  public boolean equals(Node<T> node){
+    if(this == node){
+      return true;
+    }
+    if(!(node instanceof Node)){
+      return false;
+    }
+    return this.data.equals(node.getData()) && this.nextNode.equals(node.getNextNode());
+  }
 }
 

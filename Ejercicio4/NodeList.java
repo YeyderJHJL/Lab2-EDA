@@ -48,8 +48,25 @@ public class NodeList<T> {
     return true;
   }
   
-  public boolean equals(T data){
-
+  public boolean equals(NodeList<T> datas){
+    if (this == datas) {
+      return true;
+    }
+    if (!(datas instanceof NodeList)) {
+      return false;
+    }
+    NodeList<T> otherList = datas;
+    if (this.getSize() != otherList.getSize()) {
+        return false;
+    }
+    for (int i = 0; i < size; i++) {
+        Node<T> element1 = this.getRoot();
+        Node<T> element2 = otherList.getRoot();
+        if (!element1.equals(element2)) {
+          return false;
+        }
+    }
+    return true;
   }
 
   public T get(int index){
