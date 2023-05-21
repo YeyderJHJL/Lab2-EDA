@@ -3,7 +3,7 @@ package Ejercicio4;
 public class NodeList<T> {
   Node<T> root;
 /*
- considero conveniente que se crea una lista local para algunos metodos
+ fue conveniente que se cree una lista local para algunos metodos
  private List<T> lista;
 
     // Constructor de la clase
@@ -42,7 +42,7 @@ public class NodeList<T> {
         }
    }
 
-//Este metodo devuelve el número de elementos de esta lista.
+//Este metodo devuelve el número de elementos de esta lista.(debe mejorarse)
    public static <T> int size() {
 	if (isLargeList()) {
         return Integer.MAX_VALUE;
@@ -66,7 +66,7 @@ public class NodeList<T> {
         // devuelve la sublista creada
         return subList;
     }
-//Este metodo elimina el elemento en la posición especificada en esta lista
+//Este metodo elimina el elemento en la posición especificada en esta lista (puede mejorarse)
   public E remove(int index) {   //recibe como parametro el index
 	//si el índice está fuera de rango 
         if (index < 0 || index >= lista.size()) {
