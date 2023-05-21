@@ -81,11 +81,11 @@ public boolean remove(Object o) {
     if (!supportsRemoval()) {
         throw new UnsupportedOperationException("Operación de eliminación no es compatible con esta lista.");
     }
-    // Verifica si el objeto es nulo y la lista no permite elementos nulos
+    // verifica si el objeto es nulo y la lista no permite elementos nulos
     if (o == null && !allowsNullElements()) {
         throw new NullPointerException("Esta lista no permite elementos nulos.");
     }
-    // Verifica si el objeto es compatible con los elementos de la lista
+    // verifica si el objeto es compatible con los elementos de la lista
     if (o != null && !isElementTypeValid(o)) {
         throw new ClassCastException("El tipo de elemento es incompatible con esta lista.");
     }
@@ -97,15 +97,42 @@ public boolean remove(Object o) {
             break;
         }
     }
-    // Elimina el elemento si se encontró
+    // elimina el elemento si se encontró
     if (index != -1) {
-        elements.remove(index);
+        lista.remove(index);
         return true;
     } else {
         return false;
     }
 }
 
+//Este metodo Elimina de esta lista todos sus elementos que están contenidos en la colección especificada.
+public boolean removeAll(Collection<?> c) {
+    // verifica si la operación removeAll es compatible con esta lista
+    if (!supportsRemoval()) {
+        throw new UnsupportedOperationException("La operación removeAll no es compatible con esta lista.");
+    }
+    // verifica si la colección permite elementos nulos y esta lista contiene un elemento nulo
+    if (!allowsNullElements() && c.contains(null) && contains(null)) {
+        throw new NullPointerException("Esta lista contiene un elemento nulo y la colección especificada no permite elementos nulos.");
+    }
+    // verifica si la colección especificada tiene elementos incompatibles con esta lista
+    for (Object element : c) {
+        if (!isElementTypeValid(element)) {
+            throw new ClassCastException("La clase de un elemento de la lista es incompatible con la colección especificada.");
+        }
+    }
+    // elimina los elementos de la lista que están contenidos en la colección
+    boolean modified = false;
+    Iterator<?> iterator = iterator();
+    while (iterator.hasNext()) {
+        if (c.contains(iterator.next())) {
+            iterator.remove();
+            modified = true;
+        }
+    }
+    return modified;
+}
 
 }
 
