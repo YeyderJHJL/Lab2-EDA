@@ -44,9 +44,11 @@ public class NodeList<T> {
 
 //Este metodo devuelve el número de elementos de esta lista.
    public static <T> int size() {
-	   private List<T> lista; //lista es el nombre del arreglo.
-        return lista.size();  // Utiliza el método size() de la clase List para obtener el tamaño.
-
+	if (isLargeList()) {
+        return Integer.MAX_VALUE;
+    } else {
+	   return lista.size();  // Utiliza el método size() de la clase List para obtener el tamaño.
+       }
     }
 
 //Este metodo devuelve una vista de la parte de esta lista entre fromIndex , inclusive, y toIndex , exclusivo. 
