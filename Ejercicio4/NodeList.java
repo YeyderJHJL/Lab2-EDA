@@ -115,6 +115,6 @@ public class NodeList<T> {
   }
 
   public boolean isEmpty(){
-
+    return size == 0;
   }
 }
