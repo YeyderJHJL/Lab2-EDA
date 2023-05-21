@@ -67,16 +67,20 @@ public class NodeList<T> {
         return subList;
     }
 //Este metodo elimina el elemento en la posición especificada en esta lista
-  public void remove(int index) {   //recibe como parametro el index
+  public E remove(int index) {   //recibe como parametro el index
 	//si el índice está fuera de rango 
         if (index < 0 || index >= lista.size()) {
             throw new IndexOutOfBoundsException("Indice fuera del rango");
         }
-        // obtener el elemento en la posición especificada
-        T removedElement = lista.get(index);
-        // eliminar el elemento de la lista
-        elements.lista(index);
-    }
+        T removedElement = lista[index];
+        // Desplaza elementos subsiguientes a la izquierda
+        for (int i = index; i < size - 1; i++) {
+           lista[i] = lista[i + 1];
+         }
+        lista[size - 1] = null;  // elimina la referencia al último elemento
+        size--;  // actualizar el tamaño de la lista
+        return removedElement;  
+  }
 //Este metodo elimina la primera aparición del elemento especificado de esta lista, si está presente (operación opcional). Si esta lista no contiene el elemento, no se modifica. Más formalmente, elimina el elemento con el índice más bajo i tal que (o==null ? get(i)==null : o.equals(get(i))) (si tal elemento existe). Devuelve verdadero si esta lista contenía el elemento especificado (o de manera equivalente, si esta lista cambió como resultado de la llamada). 
 public boolean remove(Object o) {
     // verifica si la operación de eliminación es compatible con esta lista
