@@ -1,5 +1,7 @@
 package Ejercicio4;
 
+import java.util.Collection;
+
 public class NodeList<T> {
   Node<T> root;
 
@@ -61,6 +63,23 @@ public class NodeList<T> {
       // Al no estar dentro del rango se mandara un mensaje
       System.out.println("No se puede añadir un elemento fuera de rango");
     }
+  }
+
+  public void addAll(Collection<? extends T> c) {
+    for (T element : c) {
+      this.add(element);
+    }
+  }
+
+  public void addAll(int index, Collection<? extends T> c) {
+    for (T element : c) {
+      this.add(index, element);
+      index++;
+    }
+  }
+
+  public void clear() {
+    this.root = null;
   }
 
   // Este metodo aun no esta hecho, pero deberia devolver el tamaño de la lista
