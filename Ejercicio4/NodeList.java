@@ -27,7 +27,7 @@ public class NodeList<T> {
   }
   
   public boolean contains(T data){
-    Node<T> myNode = root;
+    Node<T> myNode = this.root;
     while(myNode != null){
       if(myNode.getData().equals(data)){
         return true;
@@ -58,7 +58,7 @@ public class NodeList<T> {
     if (this.getSize() != otherList.getSize()) {
       return false;
     }
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < this.size; i++) {
       Node<T> element1 = this.getRoot();
       Node<T> element2 = otherList.getRoot();
       if (!element1.equals(element2)) {
@@ -69,10 +69,10 @@ public class NodeList<T> {
   }
 
   public T get(int index){
-    if (index < 0 || index >= size) {
+    if (index < 0 || index >= this.size) {
       throw new IndexOutOfBoundsException("Numero ingresado: "+index+", Tamaño de List: "+size);
     }
-    Node<T> myNode = root;
+    Node<T> myNode = this.root;
     for (int i = 0; i < index; i++) {
       myNode = myNode.getNextNode();
     }
@@ -80,14 +80,27 @@ public class NodeList<T> {
   }
   
   public int indexOf(T data){
+    Node<T> myNode = this.root;
+    for (int i = 0; i < this.size; i++) {
+      if (data == null) {
+        if (myNode.getData() == null) {
+          return i;
+        }
+      } else {
+        if (data.equals(myNode.getData())) {
+          return i;
+        }
+      }
+      myNode = myNode.getNextNode();
+    }
+    return -1;
+  }
+
+  public int lastindexOf(T data){
 
   }
 
   public boolean isEmpty(){
-
-  }
-
-  public int lastindexOf(T data){
 
   }
 }
