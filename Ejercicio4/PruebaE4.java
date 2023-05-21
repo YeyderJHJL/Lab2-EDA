@@ -11,6 +11,11 @@ public class PruebaE4 {
       listaAnimal.add("SERPIENTE");
       listaAnimal.add("RATON");
 
+      System.out.println("CREANDO LISTA ANIMAL...");
+
+      System.out.println("La lista está vacia"+listaAnimal.isEmpty());
+      System.out.println("Tamaño actual de lista: "+ listaAnimal.getSize());
       
-  }
+  
+    }
 }
