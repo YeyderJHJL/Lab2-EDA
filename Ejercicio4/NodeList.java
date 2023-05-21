@@ -97,7 +97,21 @@ public class NodeList<T> {
   }
 
   public int lastindexOf(T data){
-
+    Node<T> myNode = root;
+    int lastIndex = -1;
+    for (int i = 0; i < size; i++) {
+      if (data == null) {
+        if (myNode.getData() == null) {
+          lastIndex = i;
+        }
+      } else {
+        if (data.equals(myNode.getData())) {
+          lastIndex = i;
+        }
+      }
+      myNode = myNode.getNextNode();
+    }
+    return lastIndex;
   }
 
   public boolean isEmpty(){
