@@ -1,8 +1,12 @@
 package Ejercicio4;
 
 public class Node<T> {
-  T data;
-  Node<T> nextNode;
+  
+  private T data;
+  private Node<T> nextNode;
+
+  public Node(){
+  }
 
   public T getData() {
     return this.data;
@@ -20,3 +24,4 @@ public class Node<T> {
     this.nextNode = nextNode;
   }
 }
+
