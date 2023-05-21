@@ -2,34 +2,62 @@ package Ejercicio4;
 
 public class NodeList<T> {
 
-	private Node<T> root;
+  private int size;
+  private Node<T> root;
 
-	public boolean contains(T data){
+  public NodeList(){
+    root = null;
+    size = 0;
+  }
 
-	}
+  public void setSize(int size){
+    this.size = size;
+  }
   
-  	public boolean containsAll(Collection<T> datas){
-
-  	}
+  public void setRoot(Node<T> root){
+    this.root = root;
+  }
   
-  	public boolean equals(T data){
-
-  	}
-
-  	public T get(int index){
-
-  	}
+  public int getSize(){
+    return this.size;
+  }
   
-  	public int indexOf(T data){
+  public Node<T> getRoot(){
+    return this.root;
+  }
+  
+  public boolean contains(T data){
+    Node<T> myNode = root;
+    while(myNode != null){
+      if(myNode.getData().equals(data)){
+        return true;
+      }
+      myNode = myNode.getNextNode();
+    }
+    return false;
+  }
+  
+  public boolean containsAll(Collection<T> datas){
 
-  	}
+  }
+  
+  public boolean equals(T data){
 
-  	public boolean isEmpty(){
+  }
 
-  	}
+  public T get(int index){
 
-  	public int lastindexOf(T data){
+  }
+  
+  public int indexOf(T data){
 
-  	}
+  }
+
+  public boolean isEmpty(){
+
+  }
+
+  public int lastindexOf(T data){
+
+  }
 }
-
