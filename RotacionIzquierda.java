@@ -15,7 +15,7 @@ class RotacionIzquierda {
 
     public static int[] rotar(int[] A){
        Scanner scan = new Scanner(System.in);
-       System.out.print("\nIngrese la cantidad de valores que desea rotar a la izquierda(1-5): ");
+       System.out.print("\nIngrese la cantidad de valores que desea rotar a la izquierda: ");
 
        int d = scan.nextInt();
        int[] Aiz = new int[A.length];
