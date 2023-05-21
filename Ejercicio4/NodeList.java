@@ -1,4 +1,5 @@
 package Ejercicio4;
+import java.util.Collection;
 
 public class NodeList<T> {
 
@@ -37,8 +38,14 @@ public class NodeList<T> {
     return false;
   }
   
-  public boolean containsAll(Collection<T> datas){
-
+  public boolean containsAll(Node<T> datas){
+    while (datas != null) {
+      if (!contains(datas.getData())) {
+        return false;
+      }
+      datas = datas.getNextNode();
+    }
+    return true;
   }
   
   public boolean equals(T data){
