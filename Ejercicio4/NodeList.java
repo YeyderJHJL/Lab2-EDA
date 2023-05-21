@@ -1,5 +1,4 @@
 package Ejercicio4;
-import java.util.Collection;
 
 public class NodeList<T> {
 
@@ -57,20 +56,27 @@ public class NodeList<T> {
     }
     NodeList<T> otherList = datas;
     if (this.getSize() != otherList.getSize()) {
-        return false;
+      return false;
     }
     for (int i = 0; i < size; i++) {
-        Node<T> element1 = this.getRoot();
-        Node<T> element2 = otherList.getRoot();
-        if (!element1.equals(element2)) {
-          return false;
-        }
+      Node<T> element1 = this.getRoot();
+      Node<T> element2 = otherList.getRoot();
+      if (!element1.equals(element2)) {
+        return false;
+      }
     }
     return true;
   }
 
   public T get(int index){
-
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException("Numero ingresado: "+index+", Tamaño de List: "+size);
+    }
+    Node<T> myNode = root;
+    for (int i = 0; i < index; i++) {
+      myNode = myNode.getNextNode();
+    }
+    return myNode.getData();
   }
   
   public int indexOf(T data){
