@@ -55,14 +55,26 @@ public class NodeList<T> {
 	if (fromIndex < 0 || toIndex > lista.size() || fromIndex > toIndex) {
             throw new IndexOutOfBoundsException("Índices de sublista no son validos");
         }
-        // Crear una nueva lista para almacenar la sublista
+        // crear una nueva lista para almacenar la sublista
         List<T> subList = new ArrayList<>();
-	// Iterar sobre los elementos desde fromIndex hasta toIndex y los agrega a la sublista
+	// oterar sobre los elementos desde fromIndex hasta toIndex y los agrega a la sublista
         for (int i = fromIndex; i < toIndex; i++) {
             subList.add(lista.get(i));
         }
-        // Devuelve la sublista creada
+        // devuelve la sublista creada
         return subList;
     }
+//Este metodo elimina el elemento en la posición especificada en esta lista
+  public void remove(int index) {
+	//si el índice está fuera de rango 
+        if (index < 0 || index >= lista.size()) {
+            throw new IndexOutOfBoundsException("Indice fuera del rango");
+        }
+        // obtener el elemento en la posición especificada
+        T removedElement = lista.get(index);
+        // eliminar el elemento de la lista
+        elements.lista(index);
+    }
+//
 }
 
