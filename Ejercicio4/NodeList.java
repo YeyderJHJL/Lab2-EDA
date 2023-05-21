@@ -66,12 +66,15 @@ public class NodeList<T> {
   }
 
   public void addAll(Collection<? extends T> c) {
+    // Va agregando elemento por elemento a la lista
     for (T element : c) {
       this.add(element);
     }
   }
 
   public void addAll(int index, Collection<? extends T> c) {
+    // va agregando elemento por elemento a la lista, pero agrega un elemento en el
+    // index posterior al elemento anteriormente agregado
     for (T element : c) {
       this.add(index, element);
       index++;
@@ -79,6 +82,7 @@ public class NodeList<T> {
   }
 
   public void clear() {
+    // Elimina la referencia a la raiz, eliminando todos los nodos en consecuencia
     this.root = null;
   }
 
