@@ -16,6 +16,11 @@ public class PruebaE4 {
       System.out.println("La lista está vacia"+listaAnimal.isEmpty());
       System.out.println("Tamaño actual de lista: "+ listaAnimal.getSize());
       
-  
+      System.out.println("Contiene la palabra 'CANGURO'? "+listaAnimal.contains("CANGURO"));
+
+      System.out.println("Elementos de la lista: "+listaAnimal.toString());
+      System.out.println("Tamaño actual: "+listaAnimal.getSize());
+
+      
     }
 }
