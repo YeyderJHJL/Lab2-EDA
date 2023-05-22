@@ -3,7 +3,6 @@ package Ejercicio4;
 import java.util.Collection;
 
 public class NodeList<T> {
-<<<<<<< HEAD
   
   private int size;
   private Node<T> root;
@@ -36,6 +35,7 @@ public class NodeList<T> {
       // que le sige. Asi posicionando el nuevo nodo como el nuevo ultimo
       currentNode.setNextNode(newNode);
     }
+    this.size++;
   }
 
   public void add(int index, T element) {
@@ -71,6 +71,7 @@ public class NodeList<T> {
       // Al no estar dentro del rango se mandara un mensaje
       System.out.println("No se puede añadir un elemento fuera de rango");
     }
+    this.size++;
   }
 
   public void addAll(Collection<? extends T> c) {
@@ -212,11 +213,30 @@ public class NodeList<T> {
   }
 
 
+public String toString(){
+  //Dentro de un string guardara toda la lista
   
-=======
-  Node<T> root;
-/*
- fue conveniente que se cree una lista local para algunos metodos
+  String listaCompleta = "";
+  Node<T> actual = root;
+
+  boolean nodo0= true;
+
+  while(actual != null ){
+    //El primer nodo empezara imprimiendo, a partir de este se separa de un guion
+    if(nodo0){
+      listaCompleta += actual.getData();
+    }else{
+      listaCompleta += " - " + actual.getData();
+    }
+    //cuando llegue a la ultima posicion sera null
+    actual = actual.getNextNode();
+
+  }
+  return listaCompleta;
+}
+  
+
+ //fue conveniente que se cree una lista local para algunos metodos
  private List<T> lista;
 
     // Constructor de la clase
@@ -224,7 +244,7 @@ public class NodeList<T> {
         this.lista = lista;
     }
  
- */
+ 
 
 //Este metodo reemplaza el elemento en la posición especificada en esta lista con el elemento especificado.
    public T set(int index, T element) {    //como parametros recibe el indice de posicion y el elemento
@@ -323,7 +343,6 @@ public boolean remove(Object o) {
     } else {
         return false;
     }
->>>>>>> branch-Ejercicio4-Paola
 }
 
 //Este metodo Elimina de esta lista todos sus elementos que están contenidos en la colección especificada.
