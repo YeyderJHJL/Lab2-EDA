@@ -23,8 +23,8 @@ public class PruebaE4 {
 
       System.out.println("Añadir elemento MONO ");
       listaAnimal.add("MONO");
-      System.out.println("Añadir elemento Araña ");
-      listaAnimal.add(2,ARAÑA);
+      System.out.println("Añadir elemento ARAÑA ");
+      listaAnimal.add(2,"ARAÑA");
 
     }
 }
