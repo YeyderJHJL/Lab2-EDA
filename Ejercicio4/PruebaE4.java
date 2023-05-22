@@ -26,5 +26,13 @@ public class PruebaE4 {
       System.out.println("Añadir elemento ARAÑA ");
       listaAnimal.add(2,"ARAÑA");
 
+      System.out.println("Elementos de la lista: " + listaAnimal.toString());
+      System.out.println("Tamaño actual: " + listaAnimal.getSize());
+
+      listaAnimal.clear();
+      System.out.println("LIMPIANDO...");
+
+      System.out.println("Tamaño actual: " + listaAnimal.getSize());
+      System.out.println("La lista está vacia? " + listaAnimal.isEmpty());
     }
 }
