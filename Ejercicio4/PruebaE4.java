@@ -21,6 +21,10 @@ public class PruebaE4 {
       System.out.println("Elementos de la lista: "+listaAnimal.toString());
       System.out.println("Tamaño actual: "+listaAnimal.getSize());
 
-      
+      System.out.println("Añadir elemento MONO ");
+      listaAnimal.add("MONO");
+      System.out.println("Añadir elemento Araña ");
+      listaAnimal.add(2,ARAÑA);
+
     }
 }
